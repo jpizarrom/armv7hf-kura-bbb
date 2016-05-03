@@ -16,8 +16,6 @@ RUN dpkg -i kura_${KURA_VERSION}_${KURA_ARCH_VERSION}_installer.deb
 
 RUN [ -f /lib/arm-linux-gnueabihf/libudev.so.0 ] || ln -sf /lib/arm-linux-gnueabihf/libudev.so.1 /lib/arm-linux-gnueabihf/libudev.so.0
 
-RUN [ "cross-build-end" ]
-
 ENV ZIGBEE_SERIALPORT /dev/ttyS4
 ENV ZIGBEE_CHANNEL 15
 ENV ZIGBEE_PAN 4568
@@ -34,3 +32,5 @@ EXPOSE 5002
 CMD ["/opt/eclipse/kura/bin/start_kura.sh"]
 
 # CMD ["sh","-c","/app/zigbee-console-javase/bin/zigbee-console-javase $ZIGBEE_SERIALPORT $ZIGBEE_CHANNEL $ZIGBEE_PAN $ZIGBEE_RESET"]
+
+RUN [ "cross-build-end" ]
