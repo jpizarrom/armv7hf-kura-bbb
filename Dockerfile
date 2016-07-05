@@ -1,4 +1,4 @@
-FROM jpizarrom/armv7hf-java-dockerhub:oracle-java7
+FROM jpizarrom/armv7hf-java:oracle-java7
 
 RUN [ "cross-build-start" ]
 
