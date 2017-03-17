@@ -1,4 +1,4 @@
-FROM jpizarrom/armv7hf-java:oracle-java7-201703161
+FROM jpizarrom/armv7hf-java:oracle-java8-201703161
 
 RUN [ "cross-build-start" ]
 
