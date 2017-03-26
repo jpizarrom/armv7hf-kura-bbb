@@ -11,8 +11,10 @@ ENV KURA_VERSION 2.1.0
 ENV KURA_ARCH_VERSION beaglebone-nn_debian
 
 ## Kura installation
-RUN wget http://download.eclipse.org/kura/releases/${KURA_VERSION}/kura_${KURA_VERSION}_${KURA_ARCH_VERSION}_installer.deb
-RUN dpkg -i kura_${KURA_VERSION}_${KURA_ARCH_VERSION}_installer.deb
+RUN \
+  wget http://download.eclipse.org/kura/releases/${KURA_VERSION}/kura_${KURA_VERSION}_${KURA_ARCH_VERSION}_installer.deb && \
+  dpkg -i kura_${KURA_VERSION}_${KURA_ARCH_VERSION}_installer.deb && \
+  rm kura_${KURA_VERSION}_${KURA_ARCH_VERSION}_installer.deb
 
 RUN [ -f /lib/arm-linux-gnueabihf/libudev.so.0 ] || ln -sf /lib/arm-linux-gnueabihf/libudev.so.1 /lib/arm-linux-gnueabihf/libudev.so.0
 
