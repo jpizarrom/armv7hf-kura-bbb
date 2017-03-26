@@ -7,7 +7,7 @@ RUN \
   apt-get install -y dos2unix ifupdown iproute2 isc-dhcp-client isc-dhcp-common libatm1 libdns-export100 libirs-export91 libisc-export95 libisccfg-export90 libxtables10 netbase telnet unzip net-tools ethtool && \
   rm -rf /var/lib/apt/lists/*
 
-ENV KURA_VERSION 2.1.0
+ENV KURA_VERSION 2.0.2
 ENV KURA_ARCH_VERSION beaglebone-nn_debian
 
 ## Kura installation
